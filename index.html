@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Oladipo Boluwaduro Emmaunuel</title>
+    <link rel="stylesheet" href="my-portfolio.css">
+</head>
+<body> 
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">BOLUWADURO O.</div>
+        <ul class="nav-links">
+            <li><a href="index.html"class="active">Home</a></li>
+            <li><a href="about.html"class="active">About</a></li>
+            <li><a href="experience.html"class="active">Experience</a></li>
+            <li><a href="project.html" class="active">Projects</a></li>
+            <li><a href="contact.html"class="active">Contact</a></li>
+            <li><a href="Oladipo-Boluwaduro-Emmanuel-Resume-20250325.pdf" target="_blank"class="active">Resume</a></li>
+            <li><button id="theme-toggle">☀️</button></li>
+        </ul>
+        <div class="menu-icon">&#9776;</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Hey, I'm <span class="name">Oladipo Boluwaduro Emmaunuel</span></h2>
+        <p>A <strong>Web Developer</strong> with 3 years of experience in creating modern and responsive websites through carefully crafted code.</p>
+        <div class="buttons">
+            <a href="https://wa.me/7075800632" class="btn">Get in Touch on Whatsapp</a>
+            <a href="https://www.linkedin.com/in/boluwaduro-oladipo/  "><img src="image/linkdin.jpg" alt="LinkedIn" class="icon"></a>
+            <a href="https://github.com/BoluOladipo?tab=repositories"><img src="image/github.jpg" alt="GitHub" class="icon"></a>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <h3>Tech Stack</h3>
+        <div class="stack-container">
+           <div class="stack-box"><img src="image/html.jpg" alt="HTML"></div>
+           <div class="stack-box"><img src="image/css.jpg" alt="CSS"></div>
+            <div class="stack-box"><img src="image/tailwind.jpg" alt="Tailwind CSS"></div>
+            <div class="stack-box"><img src="image/react.jpg" alt="React"></div>
+            <div class="stack-box"><img src="image/next.jpg" alt="Next.js"></div>
+            <div class="stack-box"><img src="image/bootstarp.jpg" alt="JavaScript"></div>
+            <div class="stack-box"><img src="image/github.jpg" alt="GitHub"></div>
+            <div class="stack-box"><img src="image/netlify.jpg" alt="Netlify"></div>
+            <div class="stack-box"><img src="image/node.jpg" alt="Node"></div>
+            <div class="stack-box"><img src="image/ui.jpg" alt="UI/UX"></div>
+            <div class="stack-box"><img src="image/vercel.jpg" alt="Vercel"></div>
+            <div class="stack-box"><img src="image/fbase.jpg" alt="FireBase"></div>
+            <div class="stack-box"><img src="image/monogdb.jpg" alt="MongoDB"></div>
+            <div class="stack-box"><img src="image/vscode.jpg" alt="Visual Studio Code"></div>
+            <div class="stack-box"><img src="image/nbeans.jpg" alt="Net Beans"></div>
+            <div class="stack-box"><img src="image/xammp.jpg" alt="Xammp"></div>
+
+
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Load the saved theme
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleButton.textContent = "🌙"; // Show dark mode icon
+    } else {
+        toggleButton.textContent = "☀️"; // Show light mode icon
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        // Save the preference
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙"; // Show dark mode icon
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️"; // Show light mode icon
+        }
+    });
+});
+    </script>
+
+</body>
+</html>

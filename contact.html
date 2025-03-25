@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">BOLUWADURO O.</div>
+    <ul class="nav-links">
+        <li><a href="index.html"class="active">Home</a></li>
+        <li><a href="about.html"class="active">About</a></li>
+        <li><a href="experience.html"class="active">Experience</a></li>
+        <li><a href="project.html" class="active">Projects</a></li>
+        <li><a href="contact.html"class="active">Contact</a></li>
+        <li><a href="Oladipo-Boluwaduro-Emmanuel-Resume-20250325.pdf" target="_blank"class="active">Resume</a></li>
+        <li><button id="theme-toggle">☀️</button></li>
+    </ul>
+    <div class="menu-icon">&#9776;</div>
+</nav>
+
+<!-- Contact Section -->
+<section class="contact-container">
+    <h1>Get in Touch</h1>
+    <p>Have a project in mind or want to connect? Reach out through any of the platforms below!</p>
+
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/myzepzlp" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <!-- Success Message -->
+    <p id="successMessage" class="successmsg">✅ Message sent successfully!</p>
+
+
+    <h1>Contact me on :</h1>
+    <!-- Contact Options -->
+    <div class="social-links">
+        
+        <a href="https://wa.me/07075800632" target="_blank">
+            <img src="image/whatsapp.jpg" alt="WhatsApp">
+        </a>
+        <a href="https://t.me/Zino_Goldn" target="_blank">
+            <img src="image/telegram.jpg" alt="Telegram">
+        </a>
+        <a href="https://linkedin.com/in/boluwaduro-oladipo-148699296" target="_blank">
+            <img src="image/linkdin.jpg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/BoluOladipo" target="_blank">
+            <img src="image/github.jpg" alt="GitHub">
+        </a>
+        <a href="https://twitter.com/oladipo_bo26950" target="_blank">
+            <img src="image/twitter.png" alt="Twitter">
+        </a>
+        <a href="tel:+2347075800632">
+            <img src="image/call.jpg" alt="Phone Call">
+        </a>
+        <a href="mailto:boluemmanuel071@gmail.com">
+            <img src="image/download.png" alt="Email">
+        </a>
+        <a href="sms:+2347075800632">
+            <img src="image/sms.jpg" alt="SMS">
+        </a>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu-icon");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuIcon.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let formData = new FormData(this); // Collect form data automatically
+
+        try {
+            let response = await fetch(this.action, {
+                method: this.method,
+                body: formData,
+                headers: { "Accept": "application/json" } // Accept JSON response
+            });
+
+            if (response.ok) {
+                document.getElementById("successMessage").style.display = "block"; // Show success message
+                this.reset(); // Clear the form fields
+                
+            } else {
+                alert("Error sending message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again.");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Load the saved theme
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleButton.textContent = "🌙"; // Show dark mode icon
+    } else {
+        toggleButton.textContent = "☀️"; // Show light mode icon
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        // Save the preference
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙"; // Show dark mode icon
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️"; // Show light mode icon
+        }
+    });
+});
+</script>
+
+</body>
+</html>

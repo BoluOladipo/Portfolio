@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Boluwaduro</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">BOLUWADURO O.</div>
+    <ul class="nav-links">
+        <li><a href="index.html"class="active">Home</a></li>
+        <li><a href="about.html"class="active">About</a></li>
+        <li><a href="experience.html"class="active">Experience</a></li>
+        <li><a href="project.html" class="active">Projects</a></li>
+        <li><a href="contact.html"class="active">Contact</a></li>
+        <li><a href="Oladipo-Boluwaduro-Emmanuel-Resume-20250325.pdf" target="_blank"class="active">Resume</a></li>
+        <li><button id="theme-toggle">☀️</button></li>
+    </ul>
+    <div class="menu-icon">&#9776;</div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>About Me</h1>
+        <p>A passionate front-end developer dedicated to creating interactive and user-friendly experiences.<br> <i><b>My ambition is to build scalable solutions that impact business and users positively</b></i> while constangly learning and growing in my career </p>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="about-text">
+            <h2>Hi, I'm Oladipo Boluwaduro!</h2>
+            <p>
+                I’m a front-end developer based in Nigeria with expertise in UI/UX design, API integration, responsive web design, and performance optimization.  
+                I build engaging and accessible websites with modern technologies like React, Next.js, Tailwind CSS, and JavaScript.  
+            </p>
+            <p>
+                When I'm not coding, you’ll find me participating in hackathons, working on personal projects, or learning new technologies.
+            </p>
+            <h2>What Drives Me?</h4>
+            <p>I believe that great design and smooth functionality go hand in hand . my goal is to bridge the gap between design and development, ensuring that users not only interact with beautiful interfaces but also have a seamless experience</p>
+        </div>
+        <div class="about-img">
+            <img src="image/profile.JPG" alt="Boluwaduro">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box"><i class="fab fa-html5"></i> HTML</div>
+            <div class="skill-box"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="skill-box"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-box"><i class="fab fa-react"></i> React</div>
+            <div class="skill-box"><i class="fab fa-node"></i> Node.js</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> Tailwind CSS</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> Netlify</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> Vercel</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> UI/UX Design</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> Next.js</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> GitHub</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> Bootstrap</div>
+            <div class="skill-box"><i class="fab fa-git-alt"></i> API integration</div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <h2>Experience & Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Intern - Olam Company</h3>
+                <p>March 2025 - Present</p>
+                <p>Working as a front-end developer, optimizing UI/UX and improving web performance.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Final Year - University</h3>
+                <p>2025</p>
+                <p>Currently completing my final year in software development.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Hackathon Participant</h3>
+                <p>2024</p>
+                <p>Developed a food ordering system and a clothing ordering website in a school hackathon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts">
+        <h2>Fun Facts About Me</h2>
+        <ul>
+            <li>🎮 I love playing video games.</li>
+            <li>🌍 I enjoy exploring new technologies.</li>
+            <li>💡 I have a passion for problem-solving and innovation.</li>
+        </ul>
+    </section>
+
+    <script>
+       // Mobile Menu Toggle
+ const menuToggle = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Load the saved theme
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleButton.textContent = "🌙"; // Show dark mode icon
+    } else {
+        toggleButton.textContent = "☀️"; // Show light mode icon
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        // Save the preference
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙"; // Show dark mode icon
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️"; // Show light mode icon
+        }
+    });
+});
+    </script>
+</body>
+</html>

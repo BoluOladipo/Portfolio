@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Boluwaduro Oladipo</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <div class="logo">BOLUWADURO O.</div>
+        <ul class="nav-links">
+            <li><a href="index.html"class="active">Home</a></li>
+            <li><a href="about.html"class="active">About</a></li>
+            <li><a href="experience.html"class="active">Experience</a></li>
+            <li><a href="project.html" class="active">Projects</a></li>
+            <li><a href="contact.html"class="active">Contact</a></li>
+            <li><a href="Oladipo-Boluwaduro-Emmanuel-Resume-20250325.pdf" target="_blank"class="active">Resume</a></li>
+            <li><button id="theme-toggle">☀️</button></li>
+        </ul>
+        <div class="menu-icon">&#9776;</div>
+    </nav>
+
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <!-- Food Ordering System -->
+            <div class="project-box">
+                <img src="image/food.jpg" alt="Food Ordering System">
+                <h3>Food Ordering System</h3>
+                <p>A web-based food ordering platform that allows users to browse menus, place orders, and track deliveries in real-time. Integrated with a secure payment gateway for seamless transactions.</p>
+            </div>
+
+            <!-- Clothing Ordering Website -->
+            <div class="project-box">
+                <img src="image/cloth.jpg" alt="Clothing Ordering Website">
+                <h3>Clothing Ordering Website</h3>
+                <p>An interactive e-commerce website where users can explore fashion collections, filter products by category, and purchase items effortlessly. Features include a cart system, user authentication, and order tracking.</p>
+            </div>
+
+            <!-- Phone Project -->
+            <div class="project-box">
+                <img src="image/phones.jpg" alt="E-Learning Platform">
+                <h3>Mobile Phone </h3>
+                <p>A sleek and responsive mobile phone website showcasng the latest smartphone with detailed specifications , pricing  an a user-friendly interface. Features include product comparison , reviews , and a smooth purchasing experience.</p>
+            </div>
+
+            <!-- Car Website -->
+            <div class="project-box">
+                <img src="image/car.jpg" alt="Car Website">
+                <h3>Car Website</h3>
+                <p>A visually stunning and fully responsive car showcase website that features high-quality animations, interactive galleries, and a smooth user experience for exploring vehicle specifications.</p>
+            </div>
+
+            <!-- Student portal Project -->
+            <div class="project-box">
+                <img src="image/portal.jpg" alt="Hackathon Project">
+                <h3>Student Portal</h3>
+                <p>A dynamic and user-friendly student portal that streamlinesacademic activities . Features include course registeraion, resut checking , school fees payment , timetable amnagement . Designed with a responsive interface for semless access on all devices</p>
+            </div>
+
+            <!-- Portfolio Website -->
+            <div class="project-box">
+                <img src="image/portfolio.png" alt="Portfolio Website">
+                <h3>Personal Portfolio</h3>
+                <p>The website you are currently on! Designed with a modern UI, featuring animations, responsiveness, and an interactive project showcase using Next.js and Tailwind CSS.</p>
+            </div>
+
+            
+            <!-- AI Powered Career -->
+            <div class="project-box">
+                <img src="image/portfolio.png" alt="Portfolio Website">
+                <h3>AI Powered Career Guidance Platform(In Progress)</h3>
+                <p>Building  an AI-powered career guidance platform that helps users navigatetheir professional journey by providing personalized recommendations , skill development insight , and job opportunities based on their interest and qualifications.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+        menuIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Load the saved theme
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleButton.textContent = "🌙"; // Show dark mode icon
+    } else {
+        toggleButton.textContent = "☀️"; // Show light mode icon
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        // Save the preference
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙"; // Show dark mode icon
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️"; // Show light mode icon
+        }
+    });
+});
+    </script>
+
+</body>
+</html>

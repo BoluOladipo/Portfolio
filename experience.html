@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Boluwaduro Oladipo</title>
+    <link rel="stylesheet" href="experience.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">BOLUWADURO O.</div>
+    <ul class="nav-links">
+        <li><a href="index.html"class="active">Home</a></li>
+        <li><a href="about.html"class="active">About</a></li>
+        <li><a href="experience.html"class="active">Experience</a></li>
+        <li><a href="project.html" class="active">Projects</a></li>
+        <li><a href="contact.html"class="active">Contact</a></li>
+        <li><a href="Oladipo-Boluwaduro-Emmanuel-Resume-20250325.pdf" target="_blank"class="active">Resume</a></li>
+        <li><button id="theme-toggle">☀️</button></li>
+    </ul>
+    <div class="menu-icon">&#9776;</div>
+</nav>
+
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <h1>My Experience</h1>
+        <div class="timeline">
+
+            <!-- Internship at Olam -->
+            <div class="experience-item">
+                <div class="date">March 2025 - Present</div>
+                <h2>Frontend Developer Intern</h2>
+                <h3>Olam Company</h3>
+                <p>Developing interactive and responsive web applications, optimizing performance, and integrating APIs.</p>
+            </div>
+
+            <!-- Hackathon Participation -->
+            <div class="experience-item">
+                <div class="date">2022</div>
+                <h2>School Hackathon</h2>
+                <h3>University Hackathon</h3>
+                <p>Collaborated with a team to build a functional software prototype within a limited time.</p>
+            </div>
+
+            <!-- Food Ordering System -->
+            <div class="experience-item">
+                <div class="date">2024</div>
+                <h2>Food Ordering System</h2>
+                <h3>Personal Project</h3>
+                <p>Developed an interactive food ordering system with full responsiveness and API integration.</p>
+            </div>
+
+            <!-- Clothing Ordering Website -->
+            <div class="experience-item">
+                <div class="date">2024</div>
+                <h2>Clothing Ordering Website</h2>
+                <h3>Personal Project</h3>
+                <p>Designed a clothing e-commerce platform with a smooth user experience.</p>
+            </div>
+
+            <!-- Car Vendor -->
+            <div class="experience-item">
+                <div class="date">2025 (March)</div>
+                <h2>Car Website</h2>
+                <h3>Ongoing Project</h3>
+                <p>Built a  visually stunning and fully responsive car showcase website that features high-quality animations, interactive galleries.</p>
+            </div>
+
+
+             <!-- Student Portal -->
+             <div class="experience-item">
+                <div class="date">2024</div>
+                <h2>Student Portal</h2>
+                <h3>Personal Project</h3>
+                <p>Built a dynamic and user-friendly student portal that streamlines academic activities .</p>
+            </div>
+
+  <!-- AI Powered Career  -->
+  <div class="experience-item">
+    <div class="date">2025 (In Progress)</div>
+    <h2>AI Powered Career Guidance Platform</h2>
+    <h3>2024</h3>
+    <p>Building  an AI-powered career guidance platform that helps users navigatetheir professional journey by providing personalized recommendations , skill development insight , and job opportunities based on their interest and qualifications.</p>
+</div>
+
+        </div>
+    </section>
+<script>
+ // Mobile Menu Toggle
+ const menuToggle = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Load the saved theme
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleButton.textContent = "🌙"; // Show dark mode icon
+    } else {
+        toggleButton.textContent = "☀️"; // Show light mode icon
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+
+        // Save the preference
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleButton.textContent = "🌙"; // Show dark mode icon
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleButton.textContent = "☀️"; // Show light mode icon
+        }
+    });
+});
+</script>
+</body>
+</html>
